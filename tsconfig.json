@@ -1,0 +1,10 @@
+{
+    "compilerOptions": {
+        "outDir": "dist",
+        "target":"ES2018",
+        "noEmitOnError": true
+    },
+    "files": [
+        "src/app.ts"
+    ]
+}
