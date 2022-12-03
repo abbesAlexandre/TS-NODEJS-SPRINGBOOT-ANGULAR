@@ -24,11 +24,11 @@ const increment = (e) => {
         span.innerText = i.toString();
     }
 };
-
 function printId(id) {
     if (typeof id == "number") {
         console.log((id * 3).toString());
-    } else {
+    }
+    else {
         console.log(id.toUpperCase());
     }
 }
