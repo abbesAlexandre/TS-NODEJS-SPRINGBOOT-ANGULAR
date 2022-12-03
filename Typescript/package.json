@@ -19,5 +19,9 @@
   "homepage": "https://github.com/KimiWaDare/springBoot-Angular#readme",
   "devDependencies": {
     "typescript": "^4.9.3"
+  },
+  "dependencies": {
+    "scroll-to": "^0.0.2",
+    "utility-types": "^3.10.0"
   }
 }
