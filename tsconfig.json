@@ -2,7 +2,8 @@
     "compilerOptions": {
         "outDir": "dist",
         "target":"ES2018",
-        "noEmitOnError": true
+        "noEmitOnError": true,
+        "strict": true
     },
     "files": [
         "src/app.ts"
