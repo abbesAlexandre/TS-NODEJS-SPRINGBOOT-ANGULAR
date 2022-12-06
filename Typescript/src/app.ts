@@ -1,3 +1,22 @@
+import Alpine from 'alpinejs'
+
+Alpine.data('myComponent', function (initial: number = 0){
+    return{
+        compteur : initial,
+        increment (){
+            this.compteur += 1
+        },
+        decerement(){
+            this.compteur -= 1
+            if (this.compteur < 0){
+                (this.$el as HTMLSpanElement).style.display = "none"
+            }
+        }
+    }
+})
+
+Alpine.start();
+/**
 const compteur = document.querySelector('#compteur')
 
 let i = 0;
