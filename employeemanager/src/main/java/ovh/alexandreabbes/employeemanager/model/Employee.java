@@ -6,6 +6,6 @@ public class Employee {
     private String email;
     private String jobTitle;
     private String phone;
-    private String imageUrl; // will hold the location where we can read the img
+    private String imageUrl; // will hold the location where we can read the image
     private String employeeCode;
 }
