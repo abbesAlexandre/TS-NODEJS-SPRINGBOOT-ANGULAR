@@ -17,7 +17,7 @@ import ovh.alexandreabbes.ListeDeCourse.service.itemCourseService;
 import ovh.alexandreabbes.ListeDeCourse.model.ItemCourse;
 
 @RestController
-@RequestMapping("/ListeDeCourse")
+@RequestMapping("/ItemSource")
 public class ItemCourseRessource {
     private final itemCourseService itemCourseService;
 
@@ -26,32 +26,32 @@ public class ItemCourseRessource {
     }
 
     @GetMapping("/all")
-    public ResponseEntity<List<ItemCourse>> getAllEmployees() {
+    public ResponseEntity<List<ItemCourse>> getAllItemsCourse() {
         List<ItemCourse> ItemsCourse = itemCourseService.findAllItemsCourse();
         return new ResponseEntity<>(ItemsCourse, HttpStatus.OK);
     }
 
     @GetMapping("/find/{id}")
-    public ResponseEntity<ItemCourse> getEmployeeById(@PathVariable("id") Long id) {
+    public ResponseEntity<ItemCourse> getItemCourseById(@PathVariable("id") Long id) {
         ItemCourse ItemCourse = itemCourseService.findItemCourseById(id);
         return new ResponseEntity<>(ItemCourse, HttpStatus.OK);
     }
 
     @PostMapping("/add")
-    public ResponseEntity<ItemCourse> addEmployee(@RequestBody ItemCourse itemCourse) {
+    public ResponseEntity<ItemCourse> addItemCourse(@RequestBody ItemCourse itemCourse) {
         ItemCourse newItemCourse = itemCourseService.addItemCourse(itemCourse);
         return new ResponseEntity<>(newItemCourse, HttpStatus.CREATED);
     }
 
     @PutMapping("/update")
-    public ResponseEntity<ItemCourse> updateEmployee(@RequestBody ItemCourse itemCourse) {
+    public ResponseEntity<ItemCourse> updateItemCourse(@RequestBody ItemCourse itemCourse) {
         ItemCourse updateItemCourse = itemCourseService.updateItemCourse(itemCourse);
         return new ResponseEntity<>(updateItemCourse, HttpStatus.OK);
     }
 
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<ItemCourse> deleteEmployee(@PathVariable("id") Long id) {
-        itemCourseService.deleteEmployee(id);
+    public ResponseEntity<ItemCourse> deleteItemCourse(@PathVariable("id") Long id) {
+        itemCourseService.deleteItemCourse(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
 }

@@ -28,8 +28,8 @@ public class itemCourseService {
         return itemCourseRepo.findAll();
     }
 
-    public ItemCourse updateItemCourse(ItemCourse employee) {
-        return itemCourseRepo.save(employee);
+    public ItemCourse updateItemCourse(ItemCourse itemCourse) {
+        return itemCourseRepo.save(itemCourse);
     }
 
     public ItemCourse findItemCourseById(Long id) {
@@ -37,7 +37,7 @@ public class itemCourseService {
                 .orElseThrow(() -> new UserNotFoundException("user by id " + id + " was not found"));
     }
 
-    public void deleteEmployee(Long id) {
+    public void deleteItemCourse(Long id) {
         itemCourseRepo.deleteItemCourseById(id);
     }
 }
