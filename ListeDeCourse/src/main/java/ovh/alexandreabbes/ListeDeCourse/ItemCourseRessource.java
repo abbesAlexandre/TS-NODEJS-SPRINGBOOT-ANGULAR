@@ -17,7 +17,7 @@ import ovh.alexandreabbes.ListeDeCourse.service.itemCourseService;
 import ovh.alexandreabbes.ListeDeCourse.model.ItemCourse;
 
 @RestController
-@RequestMapping("/ItemSource")
+@RequestMapping("ListeDeCourse/ItemCourse")
 public class ItemCourseRessource {
     private final itemCourseService itemCourseService;
 

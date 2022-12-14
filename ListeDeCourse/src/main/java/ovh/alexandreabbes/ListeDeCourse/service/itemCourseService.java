@@ -38,6 +38,6 @@ public class itemCourseService {
     }
 
     public void deleteItemCourse(Long id) {
-        itemCourseRepo.deleteItemCourseById(id);
+        itemCourseRepo.deleteById(id);
     }
 }

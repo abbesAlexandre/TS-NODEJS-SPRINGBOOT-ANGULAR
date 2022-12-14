@@ -44,6 +44,6 @@ public class ListeDeCourseService {
     }
 
     public void deleteListeItemCourse(Long id) {
-        listeDeCourseRepo.deleteListeDeCourseById(id);
+        listeDeCourseRepo.deleteById(id);
     }
 }

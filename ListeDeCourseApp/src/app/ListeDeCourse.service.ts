@@ -13,23 +13,27 @@ export class ListeDeCourseService {
 
   constructor(private http: HttpClient) { }
 
-  public getListeDeCourseById(): Observable<ListeDeCourse[]> {
-    return this.http.get<ListeDeCourse[]>(`${this.apiServerUrl}/ListeDeCourse/all`);
+  public getListeDeCourseById(listeDeCourseId : number): Observable<ListeDeCourse[]> {
+    return this.http.get<ListeDeCourse[]>(`${this.apiServerUrl}/ListeDeCourse/${listeDeCourseId}`);
   }
 
   public addListeDeCourse(ListeDeCourse: ListeDeCourse): Observable<ListeDeCourse> {
     return this.http.post<ListeDeCourse>(`${this.apiServerUrl}/ListeDeCourse/add`, ListeDeCourse);
   }
 
-  public addItemListeDeCourse(itemCourse : ItemCourse): Observable<ListeDeCourse> {
-    return this.http.post<ListeDeCourse>(`${this.apiServerUrl}/ListeDeCourse/add-item`, itemCourse);
+  public addItemListeDeCourse(listeDeCourse : ListeDeCourse, itemCourse : ItemCourse): Observable<ListeDeCourse> {
+    return this.http.post<ListeDeCourse>(`${this.apiServerUrl}/ListeDeCourse/add-item`, [listeDeCourse, itemCourse]);
   }
 
-  public updateItemsCourse(employee: ListeDeCourse): Observable<ListeDeCourse> {
-    return this.http.put<ListeDeCourse>(`${this.apiServerUrl}/ListeDeCourse/update`, employee);
+  public updateListeDeCourse(listeDeCourse: ListeDeCourse): Observable<ListeDeCourse> {
+    return this.http.put<ListeDeCourse>(`${this.apiServerUrl}/ListeDeCourse/update-liste-item`, listeDeCourse);
   }
 
-  public deleteItemsCourse(employeeId: number): Observable<void> {
-    return this.http.delete<void>(`${this.apiServerUrl}/ListeDeCourse/delete/${employeeId}`);
+  public removeItemFromListeDeCourse(listeDeCourse : ListeDeCourse, itemCourse : ItemCourse): Observable<void> {
+    return this.http.delete<void>(`${this.apiServerUrl}/ListeDeCourse/remove-item`);
+  }
+
+  public deleteListeDeCourse(ListeDeCourseId: number): Observable<void> {
+    return this.http.delete<void>(`${this.apiServerUrl}/ListeDeCourse/delete/${ListeDeCourseId}`);
   }
 }

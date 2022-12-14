@@ -1,7 +1,5 @@
 package ovh.alexandreabbes.ListeDeCourse;
 
-import java.util.List;
-
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -25,7 +23,7 @@ public class ListeDeCourseRessource {
     public ListeDeCourseRessource(ListeDeCourseService listeDeCourseService) {
         this.listeDeCourseService = listeDeCourseService;
     }
-
+    
     @GetMapping("/find/{id}")
     public ResponseEntity<ListeDeCourse> getListeDeCourseById(@PathVariable("id") Long id) {
         ListeDeCourse listeDeCourse = listeDeCourseService.findListeDeCourseById(id);

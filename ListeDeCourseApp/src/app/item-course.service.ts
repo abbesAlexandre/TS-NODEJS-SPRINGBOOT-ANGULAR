@@ -13,18 +13,22 @@ export class ItemCourseService {
   constructor(private http: HttpClient) { }
 
   public getItemsCourse(): Observable<ItemCourse[]> {
-    return this.http.get<ItemCourse[]>(`${this.apiServerUrl}/ListeDeCourse/all`);
+    return this.http.get<ItemCourse[]>(`${this.apiServerUrl}/ListeDeCourse/ItemCourse/all`);
+  }
+
+  public getItemCourseById(itemCourseId: number): Observable<ItemCourse> {
+    return this.http.get<ItemCourse>(`${this.apiServerUrl}/ListeDeCourse/ItemCourse/find/${itemCourseId}`);
   }
 
   public addItemsCourse(itemCourse: ItemCourse): Observable<ItemCourse> {
-    return this.http.post<ItemCourse>(`${this.apiServerUrl}/ListeDeCourse/add`, itemCourse);
+    return this.http.post<ItemCourse>(`${this.apiServerUrl}/ListeDeCourse/ItemCourse/add`, itemCourse);
   }
 
   public updateItemsCourse(itemCourse: ItemCourse): Observable<ItemCourse> {
-    return this.http.put<ItemCourse>(`${this.apiServerUrl}/ListeDeCourse/update`, itemCourse);
+    return this.http.put<ItemCourse>(`${this.apiServerUrl}/ListeDeCourse/ItemCourse/update`, itemCourse);
   }
 
   public deleteItemsCourse(itemCourseId: number): Observable<void> {
-    return this.http.delete<void>(`${this.apiServerUrl}/ListeDeCourse/delete/${itemCourseId}`);
+    return this.http.delete<void>(`${this.apiServerUrl}/ListeDeCourse/ItemCourse/delete/${itemCourseId}`);
   }
 }

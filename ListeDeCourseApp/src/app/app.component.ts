@@ -12,6 +12,8 @@ export class AppComponent implements OnInit {
   public ItemsCourse: ItemCourse[];
 
   constructor(private ItemCourseService: ItemCourseService) { }
+  
+
 
   ngOnInit(): void {
     this.getItemsCourse();
